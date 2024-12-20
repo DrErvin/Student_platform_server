@@ -12,11 +12,7 @@
       "Proficiency in JavaScript and React",
       "Strong problem-solving and communication skills"
     ],
-    "tags": [
-      "JavaScript",
-      "React",
-      "CSS"
-    ],
+    "tags": ["JavaScript", "React", "CSS"],
     "experienceRequired": "Junior",
     "engagementType": "Full-time",
     "workArrangement": "Remote",
@@ -43,11 +39,7 @@
       "Understanding of data visualization tools",
       "Strong analytical skills and problem-solving ability"
     ],
-    "tags": [
-      "Python",
-      "ML",
-      "Big Data"
-    ],
+    "tags": ["Python", "ML", "Big Data"],
     "experienceRequired": "Intern",
     "engagementType": "Part-time",
     "workArrangement": "Hybrid",
@@ -74,11 +66,7 @@
       "Knowledge of networking protocols",
       "Ability to work independently on research projects"
     ],
-    "tags": [
-      "IoT",
-      "Smart Cities",
-      "5G"
-    ],
+    "tags": ["IoT", "Smart Cities", "5G"],
     "experienceRequired": "Not required",
     "engagementType": "Flexible",
     "workArrangement": "Remote",
@@ -105,11 +93,7 @@
       "Strong writing and communication skills",
       "Creativity and adaptability in marketing strategies"
     ],
-    "tags": [
-      "SEO",
-      "Content Marketing",
-      "Google Analytics"
-    ],
+    "tags": ["SEO", "Content Marketing", "Google Analytics"],
     "experienceRequired": "Junior",
     "engagementType": "Part-time",
     "workArrangement": "On-site",
@@ -136,15 +120,8 @@
       "Experience with SQL and database optimization",
       "Understanding of cloud services (e.g., AWS, Azure)"
     ],
-    "tags": [
-      "Node.js",
-      "SQL",
-      "API Development"
-    ],
-    "experienceRequired": [
-      "Medior",
-      "Senior"
-    ],
+    "tags": ["Node.js", "SQL", "API Development"],
+    "experienceRequired": ["Medior", "Senior"],
     "engagementType": "Full-time",
     "workArrangement": "Hybrid",
     "endingDate": "2025-02-20",
@@ -170,11 +147,7 @@
       "Interest in user experience design",
       "Creative thinking for AR solutions"
     ],
-    "tags": [
-      "AR",
-      "Unity",
-      "UX Design"
-    ],
+    "tags": ["AR", "Unity", "UX Design"],
     "experienceRequired": "Intermediate",
     "engagementType": "Project-based",
     "workArrangement": "Remote",
@@ -201,11 +174,7 @@
       "Knowledge of Python and R programming",
       "Familiarity with genome analysis tools"
     ],
-    "tags": [
-      "Bioinformatics",
-      "Python",
-      "R"
-    ],
+    "tags": ["Bioinformatics", "Python", "R"],
     "experienceRequired": "Senior",
     "engagementType": "Full-time",
     "workArrangement": "Hybrid",
@@ -232,11 +201,7 @@
       "Interest in automation technologies",
       "Ability to collaborate in team environments"
     ],
-    "tags": [
-      "Robotics",
-      "CAD",
-      "Automation"
-    ],
+    "tags": ["Robotics", "CAD", "Automation"],
     "experienceRequired": "Intern",
     "engagementType": "Part-time",
     "workArrangement": "On-site",
@@ -263,11 +228,7 @@
       "Interest in machine learning applications",
       "Strong analytical skills"
     ],
-    "tags": [
-      "Ethical AI",
-      "Data Privacy",
-      "Machine Learning"
-    ],
+    "tags": ["Ethical AI", "Data Privacy", "Machine Learning"],
     "experienceRequired": "N/A",
     "engagementType": "Part-time",
     "workArrangement": "Remote",
@@ -294,11 +255,7 @@
       "Interest in wireless technologies",
       "Strong research skills"
     ],
-    "tags": [
-      "Wireless",
-      "Charging",
-      "Electronics"
-    ],
+    "tags": ["Wireless", "Charging", "Electronics"],
     "experienceRequired": "N/A",
     "engagementType": "Flexible",
     "workArrangement": "Remote",
@@ -325,11 +282,7 @@
       "Strong coding skills",
       "Willingness to collaborate on open source projects"
     ],
-    "tags": [
-      "Open Source",
-      "Git",
-      "Telecom"
-    ],
+    "tags": ["Open Source", "Git", "Telecom"],
     "experienceRequired": "Intermediate",
     "engagementType": "Project-based",
     "workArrangement": "Remote",
@@ -356,15 +309,8 @@
       "Experience with data pipelines",
       "Ability to optimize ML models"
     ],
-    "tags": [
-      "Machine Learning",
-      "TensorFlow",
-      "Data Pipelines"
-    ],
-    "experienceRequired": [
-      "Medior",
-      "Senior"
-    ],
+    "tags": ["Machine Learning", "TensorFlow", "Data Pipelines"],
+    "experienceRequired": ["Medior", "Senior"],
     "engagementType": "Full-time",
     "workArrangement": "Hybrid",
     "endingDate": "2025-03-10",
@@ -390,11 +336,7 @@
       "Experience with robotics hardware",
       "Ability to read and interpret technical diagrams"
     ],
-    "tags": [
-      "Automation",
-      "Robotics",
-      "System Design"
-    ],
+    "tags": ["Automation", "Robotics", "System Design"],
     "experienceRequired": "Intern",
     "engagementType": "Part-time",
     "workArrangement": "On-site",
@@ -421,11 +363,7 @@
       "Strong understanding of UX principles",
       "Experience in creating interactive prototypes"
     ],
-    "tags": [
-      "UI/UX",
-      "Design Systems",
-      "Prototyping"
-    ],
+    "tags": ["UI/UX", "Design Systems", "Prototyping"],
     "experienceRequired": "N/A",
     "engagementType": "Part-time",
     "workArrangement": "Remote",
@@ -438,605 +376,5 @@
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "Olivia White",
     "contactPersonEmail": "olivia.white@telekom.com"
-  },
-  {
-    "id": 1734710822761,
-    "type": "Internship",
-    "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-21"
-  },
-  {
-    "id": 1734711013064,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-21"
-  },
-  {
-    "id": 1734711028375,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-21"
-  },
-  {
-    "id": 1734711087570,
-    "type": "Internship",
-    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-27"
-  },
-  {
-    "id": 1734711337882,
-    "type": "Internship",
-    "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-21"
-  },
-  {
-    "id": 1734711617634,
-    "type": "Internship",
-    "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-27"
-  },
-  {
-    "id": 1734711686957,
-    "type": "Internship",
-    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734711839956,
-    "type": "Internship",
-    "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-24"
-  },
-  {
-    "id": 1734711879320,
-    "type": "Thesis Topic",
-    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-23"
-  },
-  {
-    "id": 1734711956197,
-    "type": "Internship",
-    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734711985073,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734712020169,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734712151789,
-    "type": "Internship",
-    "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734712465736,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-23"
-  },
-  {
-    "id": 1734712480072,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734712496316,
-    "type": "Internship",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734712509770,
-    "type": "Thesis Topic",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734712708114,
-    "type": "Thesis Topic",
-    "fieldOfStudy": "Artificial Intelligence and Data Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734713081318,
-    "type": "Thesis Topic",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-23"
-  },
-  {
-    "id": 1734713129330,
-    "type": "Internship",
-    "fieldOfStudy": "Architecture",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-23"
-  },
-  {
-    "id": 1734713337061,
-    "type": "Internship",
-    "fieldOfStudy": "Computer Sciences and Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-27"
-  },
-  {
-    "id": 1734713351076,
-    "type": "Thesis Topic",
-    "fieldOfStudy": "Genetics and Bioengineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
-  },
-  {
-    "id": 1734713371112,
-    "type": "Thesis Topic",
-    "fieldOfStudy": "Genetics and Bioengineering",
-    "title": "New Test",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-23"
-  },
-  {
-    "id": 1734713466203,
-    "type": "Job Offer",
-    "fieldOfStudy": "Software Engineering",
-    "title": "TEST23",
-    "location": "TEST23",
-    "description": "TEST23",
-    "qualificationsAndRequirements": [
-      "TEST23"
-    ],
-    "benefits": [
-      "TEST23"
-    ],
-    "tags": [
-      "TEST23"
-    ],
-    "engagementType": "TEST23",
-    "workArrangement": "TEST23",
-    "contactPerson": "TEST23",
-    "contactPersonEmail": "TEST23@gmail.com",
-    "experienceRequired": [
-      "TEST23"
-    ],
-    "endingDate": "2024-12-22"
   }
 ]
