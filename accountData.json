@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "username": "Test",
+    "email": "example@gmail.com",
+    "password": "Test123",
+    "account_type": "student",
+    "university": "IUS"
+  },
+  {
+    "id": 2,
+    "username": "TestTelekom",
+    "email": "example@telekom.com",
+    "password": "Test123",
+    "account_type": "Telekom"
+  },
+  {
+    "id": 3,
+    "username": "NewUser",
+    "email": "newuser@gmail.com",
+    "password": "SecurePassword123",
+    "account_type": "student",
+    "university": "New University"
+  }
+]
