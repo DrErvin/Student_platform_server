@@ -24,7 +24,8 @@
     ],
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "Jane Doe",
-    "contactPersonEmail": "jane.doe@telekom.com"
+    "contactPersonEmail": "jane.doe@telekom.com",
+    "featured": true
   },
   {
     "id": 2,
@@ -51,7 +52,8 @@
     ],
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "John Smith",
-    "contactPersonEmail": "john.smith@telekom.com"
+    "contactPersonEmail": "john.smith@telekom.com",
+    "featured": true
   },
   {
     "id": 3,
@@ -240,7 +242,8 @@
     ],
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "Sarah Taylor",
-    "contactPersonEmail": "sarah.taylor@telekom.com"
+    "contactPersonEmail": "sarah.taylor@telekom.com",
+    "featured": true
   },
   {
     "id": 10,
@@ -267,7 +270,8 @@
     ],
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "David Johnson",
-    "contactPersonEmail": "david.johnson@telekom.com"
+    "contactPersonEmail": "david.johnson@telekom.com",
+    "featured": true
   },
   {
     "id": 11,
@@ -348,7 +352,8 @@
     ],
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "Liam Brown",
-    "contactPersonEmail": "liam.brown@telekom.com"
+    "contactPersonEmail": "liam.brown@telekom.com",
+    "featured": true
   },
   {
     "id": 14,
@@ -375,6 +380,7 @@
     ],
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "Olivia White",
-    "contactPersonEmail": "olivia.white@telekom.com"
+    "contactPersonEmail": "olivia.white@telekom.com",
+    "featured": true
   }
 ]
