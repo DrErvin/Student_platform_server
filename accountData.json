@@ -1,25 +1,27 @@
 [
   {
     "id": 1,
-    "username": "Test",
+    "name_and_surname": "Test",
     "email": "example@gmail.com",
     "password": "Test123",
     "account_type": "student",
-    "university": "IUS"
+    "university_name": "IUS",
+    "university_location": "Sarajevo, BiH"
   },
   {
     "id": 2,
-    "username": "TestTelekom",
+    "name_and_surname": "TestTelekom",
     "email": "example@telekom.com",
     "password": "Test123",
     "account_type": "Telekom"
   },
   {
     "id": 3,
-    "username": "NewUser",
+    "name_and_surname": "NewUser",
     "email": "newuser@gmail.com",
     "password": "SecurePassword123",
     "account_type": "student",
-    "university": "New University"
+    "university_name": "New University",
+    "university_location": "Amerika"
   }
 ]
