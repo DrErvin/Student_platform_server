@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "s-1",
     "name_and_surname": "Test",
     "email": "example@gmail.com",
     "password": "Test123",
@@ -9,14 +9,14 @@
     "university_location": "Sarajevo, BiH"
   },
   {
-    "id": 2,
+    "id": "t-1",
     "name_and_surname": "TestTelekom",
     "email": "example@telekom.com",
     "password": "Test123",
     "account_type": "Telekom"
   },
   {
-    "id": 3,
+    "id": "s-2",
     "name_and_surname": "NewUser",
     "email": "newuser@gmail.com",
     "password": "SecurePassword123",
