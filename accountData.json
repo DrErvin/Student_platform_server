@@ -1,7 +1,7 @@
 [
   {
     "id": "s-1",
-    "name_and_surname": "Test",
+    "name_and_surname": "Mujo Mujic",
     "email": "example@gmail.com",
     "password": "Test123",
     "account_type": "student",
@@ -10,7 +10,7 @@
   },
   {
     "id": "t-1",
-    "name_and_surname": "TestTelekom",
+    "name_and_surname": "Test Telekom",
     "email": "example@telekom.com",
     "password": "Test123",
     "account_type": "Telekom"
