@@ -4,6 +4,23 @@ const { readFile, writeFile } = require("fs");
 const path = require("path");
 const transporter = require("./email.js");
 
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/"); // Specify the uploads folder
+  },
+  filename: (req, file, cb) => {
+    // Preserve the original filename
+    const uniqueSuffix = `${Date.now()}-${Math.round(
+      Math.random() * 1e9
+    )}`;
+    const originalName = file.originalname;
+    cb(null, `${uniqueSuffix}-${originalName}`); // Append timestamp to avoid overwriting
+  },
+});
+const upload = multer({ storage: storage }); // Temporary directory for uploaded files
+
 const app = express();
 const PORT = 3000; // Choose a port number
 
@@ -150,79 +167,95 @@ const readJSONFile = async (filePath) => {
   });
 };
 
-app.post("/api/send-application-email", async (req, res) => {
-  try {
-    const { userId, opportunityId } = req.body;
-    console.log("Received application data:", {
-      userId,
-      opportunityId,
-    });
+app.post(
+  "/api/send-application-email",
+  upload.single("cvUpload"),
+  async (req, res) => {
+    try {
+      const { userId, opportunityId } = req.body;
+      const file = req.file; // Access the uploaded file
+      console.log("Received application data:", {
+        userId,
+        opportunityId,
+      });
 
-    // Fetch user data
-    const accounts = await readJSONFile(ACCOUNTS_FILE);
-    const user = accounts.find((account) => account.id === userId);
-    console.log("User fetched:", user);
+      // Fetch user and opportunity data
+      const accounts = await readJSONFile(ACCOUNTS_FILE);
+      const user = accounts.find((account) => account.id === userId);
+      if (!user)
+        return res.status(404).json({ error: "User not found" });
 
-    if (!user) {
-      return res.status(404).json({ error: "User not found" });
-    }
+      const opportunities = await readJSONFile(OPPORTUNITIES_FILE);
+      const opportunity = opportunities.find(
+        (opp) => opp.id == opportunityId
+      );
+      if (!opportunity || !opportunity.contactPersonEmail) {
+        return res
+          .status(404)
+          .json({ error: "Opportunity or contact email not found" });
+      }
 
-    // Fetch opportunity data
-    const opportunities = await readJSONFile(OPPORTUNITIES_FILE);
-    const opportunity = opportunities.find(
-      (opp) => opp.id === opportunityId
-    );
-    console.log("Opportunity fetched:", opportunity);
+      const studentName = user.name_and_surname;
+      const studentEmail = user.email;
+      const universityName = user.university_name || "N/A";
+      const universityLocation = user.university_location || "N/A";
+      const telekomEmail = opportunity.contactPersonEmail;
+      const opportunityTitle = opportunity.title;
 
-    if (!opportunity || !opportunity.contactPersonEmail) {
-      return res
-        .status(404)
-        .json({ error: "Opportunity or contact email not found" });
-    }
-
-    const studentName = user.name_and_surname;
-    const studentEmail = user.email;
-    const universityName = user.university_name || "N/A";
-    const universityLocation = user.university_location || "N/A";
-    const telekomEmail = opportunity.contactPersonEmail;
-    const opportunityTitle = opportunity.title;
-
-    // Email to Telekom employee
-    const telekomMailOptions = {
-      from: "noreply.telekom.student.platform@gmail.com",
-      to: telekomEmail,
-      subject: `New Application for ${opportunityTitle} through Student Platfrom website`,
-      html: `<h1>New Application Received</h1>
-        <h3>A student has applied for the opportunity: <b>${opportunityTitle}</b>.</h3>
+      // Email to Telekom employee
+      const telekomMailOptions = {
+        from: "noreply.telekom.student.platform@gmail.com",
+        to: telekomEmail,
+        subject: `New Application for ${opportunityTitle} through Student Platform`,
+        html: `<h1>New Application Received</h1>
+        <h3>${studentName} has applied for <b>${opportunityTitle}</b> opportunity.</h3>
         <p><b>Applicant:</b> ${studentName} (${studentEmail})</p>
-        <p><b>University:</b> ${universityName}, ${universityLocation}</p>`,
-    };
+        <p><b>University:</b> ${universityName}, ${universityLocation}</p>
+        <p><b>Note:</b> If provided, CV will be attached</p>`,
+        attachments: file
+          ? [{ path: file.path, filename: file.originalname }]
+          : [],
+      };
 
-    // Email to student
-    const studentMailOptions = {
-      from: "noreply.telekom.student.platform@gmail.com",
-      to: studentEmail,
-      subject: `Application Confirmation for ${opportunityTitle} through Student Platfrom website`,
-      html: `<h1>Application Confirmation</h1>
-        <h3>Thank you for applying for <b>${opportunityTitle}</b>.</h3>
+      // Email to student
+      const studentMailOptions = {
+        from: "noreply.telekom.student.platform@gmail.com",
+        to: studentEmail,
+        subject: `Application Confirmation for ${opportunityTitle}`,
+        html: `<h1>Application Confirmation</h1>
+        <h3>Thank you for applying for <b>${opportunityTitle} opportunity</b>.</h3>
         <p><b>Opportunity:</b> ${opportunityTitle}</p>
         <p><b>Contact Person Email:</b> ${telekomEmail}</p>
         <p><b>Your Name:</b> ${studentName}</p>
         <p><b>Your Email:</b> ${studentEmail}</p>
         <p><b>University:</b> ${universityName}, ${universityLocation}</p>`,
-    };
+        attachments: file
+          ? [{ path: file.path, filename: file.originalname }]
+          : [],
+      };
 
-    // Send both emails
-    console.log("Preparing to send emails...");
-    await transporter.sendMail(telekomMailOptions);
-    await transporter.sendMail(studentMailOptions);
+      // Send emails
+      console.log("Sending emails...");
+      await transporter.sendMail(telekomMailOptions);
+      await transporter.sendMail(studentMailOptions);
 
-    res.status(200).json({ message: "Emails sent successfully!" });
-  } catch (error) {
-    console.error("Error sending emails:", error);
-    res.status(500).json({ error: "Error sending emails" });
+      // Cleanup: Delete the uploaded file
+      if (file) {
+        const fs = require("fs");
+        fs.unlink(file.path, (err) => {
+          if (err) console.error("Failed to delete file:", err);
+        });
+      }
+
+      res.status(200).json({ message: "Emails sent successfully!" });
+    } catch (error) {
+      console.error("Error handling application:", error);
+      res
+        .status(500)
+        .json({ error: "Error processing the application" });
+    }
   }
-});
+);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
