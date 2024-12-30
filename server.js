@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { readFile, writeFile } = require("fs");
 const path = require("path");
+const transporter = require("./email.js");
 
 const app = express();
 const PORT = 3000; // Choose a port number
@@ -134,6 +135,93 @@ app.post("/accounts", (req, res) => {
       });
     }
   });
+});
+
+const readJSONFile = async (filePath) => {
+  return new Promise((resolve, reject) => {
+    readFile(filePath, "utf-8", (err, data) => {
+      if (err) return reject(err);
+      try {
+        resolve(JSON.parse(data));
+      } catch (parseError) {
+        reject(parseError);
+      }
+    });
+  });
+};
+
+app.post("/api/send-application-email", async (req, res) => {
+  try {
+    const { userId, opportunityId } = req.body;
+    console.log("Received application data:", {
+      userId,
+      opportunityId,
+    });
+
+    // Fetch user data
+    const accounts = await readJSONFile(ACCOUNTS_FILE);
+    const user = accounts.find((account) => account.id === userId);
+    console.log("User fetched:", user);
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    // Fetch opportunity data
+    const opportunities = await readJSONFile(OPPORTUNITIES_FILE);
+    const opportunity = opportunities.find(
+      (opp) => opp.id === opportunityId
+    );
+    console.log("Opportunity fetched:", opportunity);
+
+    if (!opportunity || !opportunity.contactPersonEmail) {
+      return res
+        .status(404)
+        .json({ error: "Opportunity or contact email not found" });
+    }
+
+    const studentName = user.name_and_surname;
+    const studentEmail = user.email;
+    const universityName = user.university_name || "N/A";
+    const universityLocation = user.university_location || "N/A";
+    const telekomEmail = opportunity.contactPersonEmail;
+    const opportunityTitle = opportunity.title;
+
+    // Email to Telekom employee
+    const telekomMailOptions = {
+      from: "noreply.telekom.student.platform@gmail.com",
+      to: telekomEmail,
+      subject: `New Application for ${opportunityTitle} through Student Platfrom website`,
+      html: `<h1>New Application Received</h1>
+        <h3>A student has applied for the opportunity: <b>${opportunityTitle}</b>.</h3>
+        <p><b>Applicant:</b> ${studentName} (${studentEmail})</p>
+        <p><b>University:</b> ${universityName}, ${universityLocation}</p>`,
+    };
+
+    // Email to student
+    const studentMailOptions = {
+      from: "noreply.telekom.student.platform@gmail.com",
+      to: studentEmail,
+      subject: `Application Confirmation for ${opportunityTitle} through Student Platfrom website`,
+      html: `<h1>Application Confirmation</h1>
+        <h3>Thank you for applying for <b>${opportunityTitle}</b>.</h3>
+        <p><b>Opportunity:</b> ${opportunityTitle}</p>
+        <p><b>Contact Person Email:</b> ${telekomEmail}</p>
+        <p><b>Your Name:</b> ${studentName}</p>
+        <p><b>Your Email:</b> ${studentEmail}</p>
+        <p><b>University:</b> ${universityName}, ${universityLocation}</p>`,
+    };
+
+    // Send both emails
+    console.log("Preparing to send emails...");
+    await transporter.sendMail(telekomMailOptions);
+    await transporter.sendMail(studentMailOptions);
+
+    res.status(200).json({ message: "Emails sent successfully!" });
+  } catch (error) {
+    console.error("Error sending emails:", error);
+    res.status(500).json({ error: "Error sending emails" });
+  }
 });
 
 app.listen(PORT, () => {
