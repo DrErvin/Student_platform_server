@@ -35,7 +35,9 @@ Using CLI, run "npm install" after cloning the repository.
 #### Option 1: Start the Server Without Restarting on File Changes
 
 To run the backend server for stable testing or production-like behavior:
+
 npm start
+
 This will host the server without restarting it on file changes. This is recommended for running tests or interacting with the API to ensure consistent behavior.
 
 #### Option 2: Start the Server with Automatic Restarts
@@ -43,6 +45,7 @@ This will host the server without restarting it on file changes. This is recomme
 If you plan to make frequent changes to the server code, use the following command:
 
 npm run dev
+
 This will restart the server every time a file is changed. However, this behavior can be unstable for testing purposes as the server may restart during requests.
 
 ⚠️ Note: This project does not currently use tools like Nodemon, which could handle restarts more gracefully.
