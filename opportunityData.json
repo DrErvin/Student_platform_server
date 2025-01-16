@@ -134,7 +134,8 @@
     ],
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "Robert White",
-    "contactPersonEmail": "robert.white@telekom.com"
+    "contactPersonEmail": "robert.white@telekom.com",
+    "featured": true
   },
   {
     "id": 6,
@@ -270,8 +271,7 @@
     ],
     "employeeInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "contactPerson": "David Johnson",
-    "contactPersonEmail": "david.johnson@telekom.com",
-    "featured": true
+    "contactPersonEmail": "david.johnson@telekom.com"
   },
   {
     "id": 11,
