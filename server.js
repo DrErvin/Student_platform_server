@@ -37,7 +37,7 @@ const ACCOUNTS_FILE = path.join(__dirname, "accountData.json");
 // Default route for '/'
 app.get("/", (req, res) => {
   res.send(
-    "Welcome to the API. Use /opportunities or /accounts to fetch data."
+    "Welcome to the API. Use /opportunities, /accounts or /applications to fetch data."
   );
 });
 
@@ -168,7 +168,7 @@ const readJSONFile = async (filePath) => {
 };
 
 app.post(
-  "/api/send-application-email",
+  "/applications",
   upload.single("cvUpload"),
   async (req, res) => {
     try {
@@ -248,6 +248,7 @@ app.post(
       }
 
       res.status(200).json({ message: "Emails sent successfully!" });
+      console.log("Email sent succesfully!");
     } catch (error) {
       console.error("Error handling application:", error);
       res
