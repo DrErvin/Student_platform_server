@@ -33,6 +33,10 @@ const OPPORTUNITIES_FILE = path.join(
   "opportunityData.json"
 );
 const ACCOUNTS_FILE = path.join(__dirname, "accountData.json");
+const APPLICATIONS_FILE = path.join(
+  __dirname,
+  "applicationsData.json"
+);
 
 // Default route for '/'
 app.get("/", (req, res) => {
@@ -179,6 +183,45 @@ app.post(
         opportunityId,
       });
 
+      // Generate application data
+      const newApplication = {
+        application_id: `${Date.now()}`,
+        user_id: userId,
+        opportunity_id: opportunityId,
+        timestamp: new Date().toISOString(),
+      };
+
+      // Read existing applications from file
+      readFile(APPLICATIONS_FILE, "utf8", (err, data) => {
+        const applications = err ? [] : JSON.parse(data);
+
+        // Add the new application
+        applications.push(newApplication);
+
+        // Write back the updated applications array
+        writeFile(
+          APPLICATIONS_FILE,
+          JSON.stringify(applications, null, 2),
+          (writeErr) => {
+            if (writeErr) {
+              console.error(
+                "Error writing to applications file:",
+                writeErr
+              );
+              return res.status(500).json({
+                status: "error",
+                message: "Failed to save application data.",
+              });
+            }
+
+            console.log(
+              "Application saved successfully:",
+              newApplication
+            );
+          }
+        );
+      });
+
       // Fetch user and opportunity data
       const accounts = await readJSONFile(ACCOUNTS_FILE);
       const user = accounts.find((account) => account.id === userId);
@@ -248,7 +291,9 @@ app.post(
       }
 
       res.status(200).json({ message: "Emails sent successfully!" });
-      console.log("Email sent succesfully!");
+      console.log(
+        "Email sent succesfully!\nApplication processed successfully!"
+      );
     } catch (error) {
       console.error("Error handling application:", error);
       res
