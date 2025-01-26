@@ -183,12 +183,14 @@ app.post(
         opportunityId,
       });
 
+      const date = new Date();
+      const applicationDate = date.toISOString().split("T")[0];
       // Generate application data
       const newApplication = {
         application_id: `${Date.now()}`,
         user_id: userId,
         opportunity_id: opportunityId,
-        timestamp: new Date().toISOString(),
+        application_date: applicationDate,
       };
 
       // Read existing applications from file
@@ -302,6 +304,74 @@ app.post(
     }
   }
 );
+
+app.post("/smart-search", async (req, res) => {
+  try {
+    const { query } = req.body;
+    console.log(query);
+    if (!query)
+      return res.status(400).json({ error: "Query is required" });
+
+    // Read JSON data from files
+    const accounts = await readJSONFile(ACCOUNTS_FILE);
+    const opportunities = await readJSONFile(OPPORTUNITIES_FILE);
+    const applications = await readJSONFile(APPLICATIONS_FILE);
+
+    // Merge data into a human-readable prompt
+    const documents = applications.map((app) => {
+      const user =
+        accounts.find((acc) => acc.id === app.user_id) || {};
+      const opportunity =
+        opportunities.find((opp) => opp.id == app.opportunity_id) ||
+        {};
+      return `[ID: ${app.application_id}] Applicant "${user.name_and_surname}" from University "${user.university_name}" located at "${user.university_location}" applied for "${opportunity.title}" opportunity from "${opportunity.location}" on application date of "${app.application_date}".`;
+    });
+
+    const prompt = `Find the most relevant matches for this query: "${query}". Here are the applications:\n${documents.join(
+      "\n"
+    )}\n\nPlease return only the application IDs that match the query. Provide the IDs in the following format:\n\n"Matching IDs: [1, 2, 3]"`;
+    console.log(prompt);
+
+    // Send the prompt to the DeepSeek AI model
+    const response = await fetch(
+      "http://127.0.0.1:11434/api/generate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "nezahatkorkmaz/deepseek-v3:latest",
+          prompt,
+          stream: false,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`DeepSeek API error: ${response.statusText}`);
+    }
+
+    const responseData = await response.json();
+    const deepSeekResponse = responseData.response;
+
+    // Extract matching application IDs
+    const match = deepSeekResponse.match(/Matching IDs: \[(.*?)\]/);
+    const matchingIds = match
+      ? match[1].split(",").map((id) => id.trim())
+      : [];
+
+    // Filter applications based on IDs
+    const matchedApplications = applications.filter((app) =>
+      matchingIds.includes(app.application_id)
+    );
+
+    res.json(matchedApplications);
+  } catch (error) {
+    console.error("Error performing smart search:", error);
+    res.status(500).json({ error: "Failed to perform smart search" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
