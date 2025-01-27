@@ -171,6 +171,17 @@ const readJSONFile = async (filePath) => {
   });
 };
 
+// GET endpoint to fetch all applications
+app.get("/applications", (req, res) => {
+  readFile(APPLICATIONS_FILE, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading applications file:", err);
+      return res.status(500).send("Error reading applications data");
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
 app.post(
   "/applications",
   upload.single("cvUpload"),
