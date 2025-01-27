@@ -41,7 +41,7 @@ const APPLICATIONS_FILE = path.join(
 // Default route for '/'
 app.get("/", (req, res) => {
   res.send(
-    "Welcome to the API. Use /opportunities, /accounts or /applications to fetch data."
+    "Welcome to the API. Use /opportunities, /accounts, /applications or /smart-search to fetch data."
   );
 });
 
@@ -361,12 +361,28 @@ app.post("/smart-search", async (req, res) => {
       ? match[1].split(",").map((id) => id.trim())
       : [];
 
-    // Filter applications based on IDs
-    const matchedApplications = applications.filter((app) =>
-      matchingIds.includes(app.application_id)
-    );
+    // Filter applications based on IDs and enrich them with full data
+    const enrichedResults = applications
+      .filter((app) => matchingIds.includes(app.application_id))
+      .map((app) => {
+        const user =
+          accounts.find((acc) => acc.id === app.user_id) || {};
+        const opportunity =
+          opportunities.find((opp) => opp.id == app.opportunity_id) ||
+          {};
+        return {
+          application_id: app.application_id,
+          application_date: app.application_date,
+          applicant_name: user.name_and_surname,
+          applicant_email: user.email,
+          university_name: user.university_name,
+          university_location: user.university_location,
+          opportunity_title: opportunity.title,
+          opportunity_location: opportunity.location,
+        };
+      });
 
-    res.json(matchedApplications);
+    res.json(enrichedResults);
   } catch (error) {
     console.error("Error performing smart search:", error);
     res.status(500).json({ error: "Failed to perform smart search" });
