@@ -1,67 +1,73 @@
-# Student platform server
+# Ekipa Project - Student Platform (Backend)
 
-This is the backend project for the Ekipa Student Platform, which supports functionalities like managing user accounts, hosting opportunities, and sending emails for applications. The backend works in tandem with the frontend repository to deliver a full user experience.
+This is the backend server for the Ekipa-Student Platform, developed in collaboration with Deutsche Telekom. It provides APIs for managing user accounts, job opportunities, applications, and AI-powered smart search.
 
-⚠️ **Important:** This backend project is not standalone. It needs to be used with the frontend application. You can find the frontend repository here:
-[Frontend Repository: Ekipa-Project](https://github.com/DrErvin/Ekipa-Project.git)
+### ⚠️ Important Prerequisites
 
----
+For this project to function correctly, you must have the following:
 
-## Features
+**1. A Separate Frontend Repository**
 
-- User account management (login, signup).
-- Hosting and managing opportunities (jobs, internships, etc.).
-- Email notifications for applications (both confirmation and to the recipient).
+- Instructions on how to run and set up the frontend are available in its README file.
+  Frontend Repository: [Frontend Repository: Ekipa-Project](https://github.com/DrErvin/Ekipa-Project.git)
 
 ---
 
-## Requirements
+### 🔧 Project Setup (Backend)
 
-1. [Node.js](https://nodejs.org/) installed on your machine.
-2. Access to the frontend repository for integration.
-3. A configured email account for sending emails (using Nodemailer).
+**1. Install Dependencies**
+
+Ensure you have Node.js installed on your machine. Then, clone this repository and install dependencies:
+
+```
+git clone https://github.com/DrErvin/Student_platform_server.git
+cd Student_platform_server
+npm install
+
+```
+
+**2. Start the Backend Server**
+
+✅ Recommended: Stable Production-Like Mode
+
+- To run the backend server without restarts on file changes (best for testing and production-like usage), use:
+
+- ```
+  npm start
+  ```
+
+- This ensures that server restarts are controlled and prevents interruptions due to file changes.
+
+⚠️ Development Mode (Optional)
+
+- For live-reloading during development, use:
+
+- ```
+  npm run dev
+  ```
+
+- This automatically restarts the server when files change.
+  However, it can be unstable and cause issues with ongoing requests.
 
 ---
 
-## Getting Started
+### 📌 API Endpoints
 
-### 1. Install Dependencies
+**1. User Accounts**
 
-Install all required dependencies using npm.
-Using CLI, run "npm install" after cloning the repository.
+- GET /accounts → Fetch all user accounts.
+- POST /accounts → Add a new user account.
 
-### 2. Running the Server
+**2. Opportunities**
 
-#### Option 1: Start the Server Without Restarting on File Changes
+- GET /opportunities → Fetch all opportunities.
+- POST /opportunities → Add a new opportunity.
 
-To run the backend server for stable testing or production-like behavior:
+**3. Applications**
 
-npm start
+- GET /applications → Fetch all submitted applications.
+- POST /applications → Submit a new application (supports file uploads).
 
-This will host the server without restarting it on file changes. This is recommended for running tests or interacting with the API to ensure consistent behavior.
+**4. Smart Search (AI-Powered)**
 
-#### Option 2: Start the Server with Automatic Restarts
-
-If you plan to make frequent changes to the server code, use the following command:
-
-npm run dev
-
-This will restart the server every time a file is changed. However, this behavior can be unstable for testing purposes as the server may restart during requests.
-
-⚠️ Note: This project does not currently use tools like Nodemon, which could handle restarts more gracefully.
-
-### 3. API Endpoints
-
-#### Accounts
-
-GET /accounts: Fetch all user accounts.
-POST /accounts: Add a new account.
-
-#### Opportunities
-
-GET /opportunities: Fetch all opportunities.
-POST /opportunities: Add a new opportunity.
-
-#### Applications
-
-POST /api/send-application-email: Send application emails
+- POST /smart-search → Search applications using DeepSeekV3 AI.
