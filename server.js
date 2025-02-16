@@ -37,6 +37,10 @@ const APPLICATIONS_FILE = path.join(
   __dirname,
   "applicationsData.json"
 );
+const WU_FILE = path.join(
+  __dirname,
+  "world_universities_and_domains.json"
+);
 
 // Default route for '/'
 app.get("/", (req, res) => {
@@ -398,6 +402,20 @@ app.post("/smart-search", async (req, res) => {
     console.error("Error performing smart search:", error);
     res.status(500).json({ error: "Failed to perform smart search" });
   }
+});
+
+// GET endpoint to fetch all world universities
+app.get("/world-universities", (req, res) => {
+  readFile(WU_FILE, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading world universities file:", err);
+      return res
+        .status(500)
+        .json({ error: "Error reading data file" });
+    }
+    // Return the entire JSON file contents
+    res.json(JSON.parse(data));
+  });
 });
 
 app.listen(PORT, () => {
