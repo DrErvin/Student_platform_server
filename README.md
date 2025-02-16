@@ -71,3 +71,7 @@ npm install
 **4. Smart Search (AI-Powered)**
 
 - POST /smart-search → Search applications using DeepSeekV3 AI.
+
+**5. List of World Universities**
+
+- GET /world-universities → Fetches the list of World Universities and their domains.

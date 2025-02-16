@@ -45,7 +45,7 @@ const WU_FILE = path.join(
 // Default route for '/'
 app.get("/", (req, res) => {
   res.send(
-    "Welcome to the API. Use /opportunities, /accounts, /applications or /smart-search to fetch data."
+    "Welcome to the API. Use /opportunities, /accounts, /applications, /smart-search or /world-universities to fetch data."
   );
 });
 
