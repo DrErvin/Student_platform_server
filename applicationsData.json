@@ -70,5 +70,17 @@
     "user_id": "s-5",
     "opportunity_id": "2",
     "application_date": "2025-01-22"
+  },
+  {
+    "application_id": "1790858593868",
+    "user_id": "s-1",
+    "opportunity_id": "1",
+    "application_date": "2026-10-01"
+  },
+  {
+    "application_id": "1790858607807",
+    "user_id": "s-1",
+    "opportunity_id": "1",
+    "application_date": "2026-10-01"
   }
 ]

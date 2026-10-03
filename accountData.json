@@ -68,5 +68,19 @@
     "account_type": "student",
     "university_name": "International University of Sarajevo",
     "university_location": "Bosnia and Herzegovina"
+  },
+  {
+    "nameAndSurname": "John Doe",
+    "email": "studentuser@middlebury.edu",
+    "password": "Test123"
+  },
+  {
+    "id": "t-1790858593654",
+    "email": "example@telekom.com",
+    "account_type": "Telekom",
+    "university_name": null,
+    "university_location": null,
+    "name_and_surname": "John Doe",
+    "password": "Password123"
   }
 ]
